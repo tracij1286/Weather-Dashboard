@@ -18,7 +18,7 @@ function find(c){
     }
     return 1;
 }
-//Set up the API key
+//Here is the API key
 var APIKey="c00ff3280ef2c4df0865f30f3c214bbf";
 // Display the curent and future weather to the user after grabing the city form the input text box.
 function displayWeather(event){
@@ -30,7 +30,7 @@ function displayWeather(event){
 }
 // Here we create the AJAX call
 function currentWeather(city){
-    // Here we build the URL so we can get a data from server side.
+    // Here we build the URL so we can get data from server side.
     var queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
     $.ajax({
         url:queryURL,
@@ -84,7 +84,7 @@ function currentWeather(city){
 }
     // This function returns the UVIindex response.
 function UVIndex(ln,lt){
-    //lets build the url for uvindex.
+    
     var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
     $.ajax({
            url:uvqURL,
@@ -94,7 +94,7 @@ function UVIndex(ln,lt){
            });
 }
     
-// Here we display the 5 days forecast for the current city.
+// Here we display the 5 days forecast for the current city with openweather.
 function forecast(cityid){
     var dayover= false;
     var queryforcastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
@@ -151,7 +151,7 @@ function loadlastCity(){
     }
 
 }
-//Clear the search history from the page
+//Here clear the search history from the page
 function clearHistory(event){
     event.preventDefault();
     sCity=[];
@@ -159,7 +159,7 @@ function clearHistory(event){
     document.location.reload();
 
 }
-//Click Handlers
+//Clicks
 $("#search-button").on("click",displayWeather);
 $(document).on("click",invokePastSearch);
 $(window).on("load",loadlastCity);
